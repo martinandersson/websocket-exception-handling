@@ -26,7 +26,7 @@ public class MyServerEndpointTest
 {
     private static final Logger LOGGER = Logger.getLogger(MyServerEndpointTest.class.getName());
     
-    static MyClientEndpoint client;
+    static ClientEndpoint client;
     
     @Deployment
     public static WebArchive buildDeployment()
