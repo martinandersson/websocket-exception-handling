@@ -92,7 +92,7 @@ public class MyClientEndpoint extends Endpoint implements ClientEndpoint, Messag
      */
     @Override
     public boolean isOpen() {
-        return session != null? session.isOpen() : false;
+        return session != null && session.isOpen();
     }
     
     /**
