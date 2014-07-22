@@ -1,6 +1,7 @@
 ### WebSocket Exception Handling
 
-Demonstrates that GlassFish/Tyrus successfully handles application exceptions occuring in a @ServerEndpoint. WildFly/Undertow force-close the endpoint without even calling @OnClose.
+Demonstrates that GlassFish/Tyrus successfully handles application exceptions occuring in a @ServerEndpoint. WildFly/Undertow force-close the endpoint without even calling @OnClose. A bug has been filed here:
+[https://issues.jboss.org/browse/UNDERTOW-284](https://issues.jboss.org/browse/UNDERTOW-284)
 
 ### How-to setup this project
 
