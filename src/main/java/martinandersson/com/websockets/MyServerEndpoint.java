@@ -50,10 +50,10 @@ public class MyServerEndpoint
         
         if ("BAD MESSAGE".equals(data)) {
             LOGGER.warning(() -> "Received a bad message: " + data);
-            throw new BadMessageException(data);
+            throw new BadMessageException(data); // <-- very much on purpose, we have our exception handling written in @OnError
         }
         else
-            LOGGER.info(() -> "Okay! Application is supposed to do something cool now!");
+            LOGGER.info(() -> "Okay, message approved! Application is supposed to do something cool now!");
     }
     
     
@@ -76,7 +76,7 @@ public class MyServerEndpoint
         trace("onError", throwable);
         
         if (!isOpen()) {
-            LOGGER.log(Level.WARNING, "Received unhandled throwable: ", throwable);
+            LOGGER.log(Level.WARNING, "Received application-unhandled throwable (socket already closed): ", throwable);
             return;
         }
         
