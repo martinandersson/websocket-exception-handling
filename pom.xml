@@ -37,8 +37,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <!-- version 1.1.5 throws NoSuchElementException somewhere. -->
-                <version>1.1.4.Final</version>
+                <version>1.1.5.Final</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -65,10 +64,11 @@
         </dependency>
         <dependency>
             <!--
-                We include the full implementation and API here.
-                Note that Tyrus is only used as client. The goal of this project
-                is to test the server, which is Undertow if this test is
-                executed in WildFly.
+                We include the full implementation and API  of Tyrus here.
+                Note that Tyrus is only used as client during the test phase.
+                The goal of this project is to test the server-side WebSocket
+                implementation, which is Undertow if this test is executed in
+                WildFly.
                 
                 See: https://tyrus.java.net/dependencies.html
             -->

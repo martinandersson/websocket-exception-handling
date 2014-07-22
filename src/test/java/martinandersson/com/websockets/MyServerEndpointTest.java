@@ -32,7 +32,11 @@ public class MyServerEndpointTest
     public static WebArchive buildDeployment()
     {
         WebArchive war = ShrinkWrap.create(WebArchive.class, MyServerEndpointTest.class.getSimpleName() + ".war");
-        war.addClasses(MyServerEndpoint.class, BadMessageException.class);
+        /*
+         * Arquillian 1.1.4 work just fine without ClientEndpoint.class packaged
+         * in the archive. Arquillian 1.1.5 don't (applies only for GlassFish).
+         */
+        war.addClasses(MyServerEndpoint.class, BadMessageException.class, ClientEndpoint.class);
         return war;
     }
     
